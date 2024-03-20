@@ -10,3 +10,30 @@ Next, implement an interface for your min heap that allows values to be inserted
 
 1. Start by writing a function which can Insert a value to your min heap, in order to do this, you will need a HeapifyUp function that will maintain the heap property of the tree.
 2. Next, write a ExtractMin function that will return the smallest element of the min heap and then HeapifyDown by swapping with the smaller of the node's two children until the order of the heap is satisfied.
+
+
+def insert_node(self, value):
+    # append value to end of list
+    # get last index
+    # call heapify to set new value in proper place
+
+
+
+def heapify(self, last_index):
+    # loop while there is a parent and parent is greater than current node
+    # set current node to parent index
+
+
+
+
+delete root_node(self):
+    # replace root node with last node
+    # call has_less_child() to determine if there is children and children is less than current node
+    # call 
+
+
+def has_lesser_child(self, node)
+    
+
+def smaller_child(self, node)
+        
