@@ -28,7 +28,7 @@ Date        Developer       Activities
 
 
 """
-
+import collections
 
 class MinHeap:
     def __init__(self):
@@ -115,6 +115,23 @@ class MinHeap:
         for element in self.heap:
             print(element, end=' ')
 
+    def level_order(self):
+        """
+        traverse Priority Queue using level order
+            root --> 1st left child --> 1st right child
+        """
+        size = len(self.heap)  # size of min heap
+        if size == 0:  #
+            return
+
+        que = collections.deque([0])
+        while que:
+            i = que.popleft()  # remove the left most index, i.e, root = 0, 1st left child = 1, 1st rigth child = 2
+            print(self.heap[i], end=' ')  # print value base on the index
+            if self.get_left_child_index(i) < size:  # get left child index base on parent index
+                que.append(self.get_left_child_index(i))
+            if self.get_right_child_index(i) < size:  # get right child index base on parent index
+                que.append(self.get_right_child_index(i))
     @staticmethod
     def create_heap():
         """
