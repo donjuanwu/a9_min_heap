@@ -33,7 +33,20 @@ delete root_node(self):
 
 
 def has_lesser_child(self, node)
-    
+    # return true, if there left child and child is less than parent
+    # return true, if there is right child and child is less than parent
+    # else, return false
 
-def smaller_child(self, node)
+def get_smaller_child(self, node)
+    # if there is no right child, return left child index
+    # if right child is less than left child, return right child index
+    # else, return left child index
+
+def get_left_child(self, node):
+    left_child_index = (node * 2) + 1
+    return left_child_index
+
+def get_right_child(self, node):
+    right_child_index = (node * 2) + 2
+    return right_child_index
         
