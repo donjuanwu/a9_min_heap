@@ -78,10 +78,12 @@ class MinHeap:
         """
         heap_length = len(self.heap)
         # the left and right child index must still be within the lenght of the array
-        if self.get_left_child_index(parent_index) < heap_length and self.heap[self.get_left_child_index(parent_index)] < self.heap[
+        if self.get_left_child_index(parent_index) < heap_length and self.heap[
+            self.get_left_child_index(parent_index)] < self.heap[
             parent_index]:
             return True  # return true, if left child exist and its value less than parent
-        elif self.get_right_child_index(parent_index) < heap_length and self.heap[self.get_right_child_index(parent_index)] < \
+        elif self.get_right_child_index(parent_index) < heap_length and self.heap[
+            self.get_right_child_index(parent_index)] < \
                 self.heap[parent_index]:
             return True  # return true, if right child exist and its value less than parent
         else:  # neither children exist and either children value is greater than parent
@@ -93,7 +95,8 @@ class MinHeap:
         :param node: parent index
         :return: child index with lesser value
         """
-        if self.get_right_child_index(node) > len(self.heap) - 1:  # right child index is greater than the last element index
+        if self.get_right_child_index(node) > len(
+                self.heap) - 1:  # right child index is greater than the last element index
             return self.get_left_child_index(node)  # if there is no right child, return left child index
         elif self.heap[self.get_right_child_index(node)] < self.heap[self.get_left_child_index(node)]:
             return self.get_right_child_index(node)
@@ -127,6 +130,7 @@ class MinHeap:
         return h
 
 
+# test out assignment
 heap = MinHeap.create_heap()
 heap.print_heap()
 print()
