@@ -115,23 +115,22 @@ class MinHeap:
         for element in self.heap:
             print(element, end=' ')
 
-    def level_order(self):
+    def level_order_traversal(self):
         """
         traverse Priority Queue using level order
             root --> 1st left child --> 1st right child
         """
         size = len(self.heap)  # size of min heap
-        if size == 0:  #
+        if size == 0:  # no elements added to queue
             return
-
-        que = collections.deque([0])
-        while que:
+        que = collections.deque([0])  # add index 0 to queue
+        while que:  # while que is not empty
             i = que.popleft()  # remove the left most index, i.e, root = 0, 1st left child = 1, 1st rigth child = 2
-            print(self.heap[i], end=' ')  # print value base on the index
-            if self.get_left_child_index(i) < size:  # get left child index base on parent index
-                que.append(self.get_left_child_index(i))
-            if self.get_right_child_index(i) < size:  # get right child index base on parent index
-                que.append(self.get_right_child_index(i))
+            print(self.heap[i], end=' ')  # print element from queue base on the index
+            if self.get_left_child_index(i) < size:  # only if left child is less than parent
+                que.append(self.get_left_child_index(i))  # append left child index to queue
+            if self.get_right_child_index(i) < size:  # only if right child is less than parent
+                que.append(self.get_right_child_index(i))   # append right child index to queue
     @staticmethod
     def create_heap():
         """
@@ -169,3 +168,6 @@ print()
 print("Add new elements: -5")
 heap.insert_node(-5)
 heap.print_heap()
+print()
+print("Level Order Traversal")
+heap.level_order_traversal()
